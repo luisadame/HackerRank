@@ -1,2 +1,2 @@
 # HackerRank
-HackerRank solutions
+This repository contains the files/solutions to HackerRank problems.
