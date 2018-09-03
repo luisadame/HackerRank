@@ -1,21 +1,20 @@
 #!/bin/python3
+# https://www.hackerrank.com/challenges/crush/problem
 
-import math
 import os
-import random
-import re
-import sys
 
 # Complete the arrayManipulation function below.
 def arrayManipulation(n, queries):
-    zeros = [0 for x in range(n)]
+    zeros = [0]*(n+1)
     max = 0
     for query in queries:
         a, b, k = query
-        for i in range(a - 1, b):
-            zeros[i] += k
-            if zeros[i] > max:
-                max = zeros[i]
+        zeros[a-1] += k
+        if(b <= len(zeros)): zeros[b] -= k
+    max = a = 0
+    for i in zeros:
+        a = a + i
+        if(max < a): max = a
     return max
 
 if __name__ == '__main__':
